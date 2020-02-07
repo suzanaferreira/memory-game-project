@@ -1,0 +1,55 @@
+. {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #000000;
+}
+
+
+.game {
+    height: 340px;
+    width: 340px;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    border: 2px solid #22E20D;
+    perspective: 1000px;
+}
+
+.cards {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+
+}
+.cards.flip {
+    transform: rotateY(180deg);
+}
+.cards:active {
+    transform: scale(.97);
+    transition: transform .3s;
+}
+
+.revelead-pic,
+.cover-side {
+    background: #1721AA;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    border-radius: 3px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.revelead-pic {
+    transform: rotateY(180deg);
+}
