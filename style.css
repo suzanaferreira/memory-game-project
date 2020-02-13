@@ -1,4 +1,4 @@
-. {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -10,6 +10,50 @@ body {
     background-color: #000000;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+
+/*---- Features : Moves Counter, Timer and Reset ----*/
+
+.callout {
+    color: #fff;
+    font-family: monospace;
+}
+
+.features {
+
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    /*check this code to position the features on top of the game*/
+}
+
+.features .movescounter {
+    font-size: 35px;
+}
+
+.features .moves {
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.features .timer {
+    font-size: 35px;
+}
+
+#resetBtn {
+    color: #fff;
+}
+
+
+
+/*---- Game Board ----*/
 
 .game {
     height: 340px;
@@ -31,13 +75,21 @@ body {
     transition: transform .5s;
 
 }
+
 .cards.flip {
     transform: rotateY(180deg);
 }
+
 .cards:active {
     transform: scale(.97);
     transition: transform .3s;
 }
+
+.cards:hover {
+    background-color: #f1f1f1;
+
+}
+
 
 .revelead-pic,
 .cover-side {
@@ -49,6 +101,7 @@ body {
     position: absolute;
     backface-visibility: hidden;
 }
+
 
 .revelead-pic {
     transform: rotateY(180deg);
