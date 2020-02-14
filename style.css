@@ -35,11 +35,11 @@ body {
 }
 
 .features .movescounter {
-    font-size: 35px;
+    font-size: 20px;
 }
 
 .features .moves {
-    font-size: 20px;
+    font-size: 35px;
     font-family: monospace;
 }
 

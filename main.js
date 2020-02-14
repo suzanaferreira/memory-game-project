@@ -1,7 +1,7 @@
 const cards = document.querySelectorAll('.cards');
 const restartBtn = document.querySelector('resetBtn');
 let hasFlippedCard = false;
-let lockBoard = false; //this is so the cards won't flip back once they are matched 
+let lockBoard = false; //keep the card flipped whem it matches.
 let firstCard, secondCard;
 let timeStart = "";
 let matchCount = 0; 
@@ -12,8 +12,8 @@ function flipCard() {
     if (this === firstCard) return; 
 
     this.classList.add('flip');
-
-    if (!hasFlippedCard) { //first click !
+   //first click
+    if (!hasFlippedCard) { 
         hasFlippedCard = true;
         firstCard = this;
         startTimer();
@@ -25,14 +25,13 @@ function flipCard() {
     checkForMatch();
     addMove();
    
-
-
 }
 
 
 function checkForMatch() {
     if (firstCard.dataset.name === secondCard.dataset.name) {
         disableCards();
+        match.play();
     }
     else {
         unflipCards();
@@ -41,8 +40,8 @@ function checkForMatch() {
 
 
 function disableCards() {
-    firstCard.removeEventListener('click', flipCard); //remove the eventListener if it's a match. You have to add the event and the function that you called 
-    secondCard.removeEventListener('click', flipCard); //remove the eventListener if it's a match
+    firstCard.removeEventListener('click', flipCard); 
+    secondCard.removeEventListener('click', flipCard); 
     resetCard();
     matchCount++;
     console.log(matchCount);
@@ -53,7 +52,7 @@ function disableCards() {
     }
 
 }
-//not sure why this won't play
+
 
 function gameOver() {
     stopTimer();
@@ -61,19 +60,17 @@ function gameOver() {
     aroo.play();
 }
 
-// if they don't match 
+// 
 function unflipCards() {
     lockBoard = true;
     noMatch.play();
 
     setTimeout(() => {
-        //so that we can see the card flip
-        // setTimeout excutes after waiting a specified amount of time
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
         resetCard();
 
-    }, 600);
+    }, 500);
 
 }
 
@@ -100,8 +97,8 @@ function addMove() {
 
 }
 if (hasFlippedCard.length === 2) {
-    //checkForMatch(clickTarget);
-
+    
+    
 }
 
 let resetGame = true; //need this for game reset and modal 
@@ -129,7 +126,7 @@ function startTimer() {
     if (resetGame == true) {
         let timer = 0;
         if (timeStart === "") {
-            timeStart = setInterval(() => { //8-30 if i use => timer works, change it per https://www.w3schools.com/js/js_timing.asp it acts like it wants to start but doesnt
+            timeStart = setInterval(() => { 
                 ++timer;
                 second = timer % 60;
                 minute = Math.floor(timer / 60);
@@ -206,12 +203,13 @@ function resetMoves() {
 
 
 }
-let noMatch = new Audio("audio/noMatch.mp3");
-let applause = new Audio("audio/Ovation.mp3");
-let match = new Audio("audio/match.mp3");
-let yeah = new Audio("audio/match.mp3");
-let aroo = new Audio("audio/AROO.mp3");
-let cheer = new Audio("audio/fans.mp3");
+let noMatch = new Audio("sounds/lose.mp3");
+let match = new Audio("sounds/win.mp3");
+let applause = new Audio("sounds/win.mp3");
+
+let yeah = new Audio("sounds/win.mp3");
+let aroo = new Audio("sounds/win.mp3");
+let cheer = new Audio("sounds/win.mp3");
 shuffle();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
