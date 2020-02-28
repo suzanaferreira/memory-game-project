@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memory Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+
 </head>
 
 <body>
@@ -37,32 +39,24 @@
             </div>
             <!-- </section> -->
 
-
+            <!-------Modal------>
 
             <div id="simpleModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
-
                         <span class="closeBtn">&times;</span>
-                        <h2> Yeah !!! </h2>
+                        <h2> Yay! Close the page to play again! </h2>
                     </div>
-
                     <div class="modal-body">
                         <!-- <h3>Congratulations!</h3> -->
-                        <img class="front-face" src="https://giphy.com/gifs/NiXQGVPQ8Bc76/html5" alt="fireworks" />
+                        <img class="front-face" src="img/lamp.gif" alt="flashylamp" height="100" width="100"/>
                         <div>Your finishing time is
                             <div class="clock"> 0:00 </div>
                             <div class="moves"></div>
-
                         </div>
-                        <img class="fireworks" src="https://giphy.com/gifs/NiXQGVPQ8Bc76/html5" alt="fireworks" />
-
                     </div>
-
                     <div class="modal-footer">
-                        <h3>You killed it!!!!</h3>
-
-                        <button id="modalBtn" class="replay" onclick="restartGame()">Play Again</button>
+                       <button id="modalBtn" class="replay" onclick="restartGame()">Play Again</button>
                     </div>
                 </div>
             </div>

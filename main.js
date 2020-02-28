@@ -57,7 +57,7 @@ function disableCards() {
 function gameOver() {
     stopTimer();
     openModal();
-    aroo.play();
+    boo.play();
 }
 
 // 
@@ -101,7 +101,7 @@ if (hasFlippedCard.length === 2) {
     
 }
 
-let resetGame = true; //need this for game reset and modal 
+let resetGame = true;
 
 let hour = 0;
 let minute = 0;
@@ -119,7 +119,7 @@ function restartGame() {
     moves = 0;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
-    aroo.play();
+    celebration.play();
 }
 
 function startTimer() {
@@ -150,19 +150,15 @@ function stopTimer() {
 }
 
 
-
 let modal = document.getElementById('simpleModal');
-
-
 
 
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
 
 
-//Listen for close click
+
 closeBtn.addEventListener('click', closeModal);
 
-//listen for outside click
 
 window.addEventListener('click', outsideClick);
 
@@ -205,11 +201,9 @@ function resetMoves() {
 }
 let noMatch = new Audio("sounds/lose.mp3");
 let match = new Audio("sounds/win.mp3");
-let applause = new Audio("sounds/win.mp3");
-
-let yeah = new Audio("sounds/win.mp3");
-let aroo = new Audio("sounds/win.mp3");
-let cheer = new Audio("sounds/win.mp3");
+let yeah = new Audio("audio/match.mp3");
+let boo = new Audio("audio/boo.mp3");
+let celebration = new Audio ("audio/celebration.mp3");
 shuffle();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
