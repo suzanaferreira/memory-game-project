@@ -33,10 +33,10 @@ To play again, the player needs to click on the play again button followed by cl
 
 ## Technologies
 
-1.HTML
-2.CSS
-3.Boostrap
-4.JavaScript
+ 1. HTML
+ 2. CSS
+ 3. Boostrap
+ 4. JavaScript
 
 ## Testing
 
@@ -44,13 +44,15 @@ This website was manually and carefully tested and inspected to be responsive at
 
 ## Credits
 I consulted these websites to have an idea on how to grasp a few features on my game:
-  -https://scotch.io,
-  -https://codepen.io,  
-  -https://taniarascia.com,
+   
+ - https://scotch.io,
+ - https://codepen.io,  
+ - https://taniarascia.com,
 
 I also consulted uncountable videos on youtube to grasp JavaScript, chanels such as:
-  -freeCodeCamp.org
-  -Adam khoury
+  
+ - freeCodeCamp.org
+ - Adam khoury
 
 Not to mention my Mentor Owonikoko, Tutor Support and all my colleagues from Code Institute the support through slack.
 
